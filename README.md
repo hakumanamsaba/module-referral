@@ -13,8 +13,8 @@ The `WolfSellers_Referral` module is a referral program implementation for Magen
 
 ## Requirements
 
-- Magento 2.4.x or later
-- PHP 7.3 or higher
+- Magento 2.4.7 or later
+- PHP 8.1 or higher
 
 ## Installation
 
