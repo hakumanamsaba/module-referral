@@ -1,0 +1,13 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="customer_account_navigation">
+            <block class="Magento\Customer\Block\Account\SortLink" name="referral-link" after="accountLink">
+                <arguments>
+                    <argument name="path" xsi:type="string">referral/customer_referral/index</argument>
+                    <argument name="label" xsi:type="string">Mis Referidos</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

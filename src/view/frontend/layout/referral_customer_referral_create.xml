@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+      layout="1column">
+    <body>
+        <referenceContainer name="content">
+            <block class="WolfSellers\Referral\Block\Customer\ReferralForm"
+                   name="referral_create_form"
+                   template="customer/form.phtml">
+                <!-- Pasamos un parámetro para indicar que es modo 'create' -->
+                <arguments>
+                    <argument name="mode" xsi:type="string">create</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

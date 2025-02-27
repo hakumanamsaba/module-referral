@@ -1,0 +1,9 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+      layout="1column">
+    <body>
+        <referenceContainer name="content">
+            <block class="WolfSellers\Referral\Block\Customer\Referral" name="referrals_block" template="customer/referral.phtml" cacheable="false" />
+        </referenceContainer>
+    </body>
+</page>

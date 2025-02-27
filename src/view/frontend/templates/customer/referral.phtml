@@ -1,0 +1,44 @@
+<?php /** @var \WolfSellers\Referral\Block\Customer\Referral $block */ ?>
+<div class="referrals-container">
+    <h2><?= __('My Referrals') ?></h2>
+    <!-- Link to Create Referral -->
+    <a href="<?= $block->getUrl('referral/customer_referral/create') ?>" class="action primary">
+        <?= __('Add New Referral') ?>
+    </a>
+
+    <table>
+        <thead>
+        <tr>
+            <th><?= __('First Name') ?></th>
+            <th><?= __('Last Name') ?></th>
+            <th><?= __('Email') ?></th>
+            <th><?= __('Phone') ?></th>
+            <th><?= __('Status') ?></th>
+            <th><?= __('Actions') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($block->getReferrals() as $referral): ?>
+            <tr>
+                <td><?= $block->escapeHtml($referral->getFirstName()) ?></td>
+                <td><?= $block->escapeHtml($referral->getLastName()) ?></td>
+                <td><?= $block->escapeHtml($referral->getEmail()) ?></td>
+                <td><?= $block->escapeHtml($referral->getPhone()) ?></td>
+                <td><?= $block->escapeHtml($referral->getStatus()) ?></td>
+                <td>
+                    <!-- Edit -->
+                    <a href="<?= $block->getUrl('referral/customer_referral/edit', ['id' => $referral->getId()]) ?>">
+                        <?= __('Edit') ?>
+                    </a>
+                    &nbsp;|&nbsp;
+                    <!-- Delete -->
+                    <a href="<?= $block->getUrl('referral/customer_referral/delete', ['id' => $referral->getId()]) ?>"
+                       onclick="return confirm('<?= __('Are you sure you want to delete this referral?') ?>')">
+                        <?= __('Delete') ?>
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>

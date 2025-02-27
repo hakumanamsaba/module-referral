@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+      layout="1column">
+    <body>
+        <referenceContainer name="content">
+            <block class="WolfSellers\Referral\Block\Customer\ReferralForm"
+                   name="referral_edit_form"
+                   template="customer/form.phtml">
+                <!-- Modo 'edit' para la plantilla -->
+                <arguments>
+                    <argument name="mode" xsi:type="string">edit</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

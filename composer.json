@@ -1,0 +1,25 @@
+{
+    "name": "wolfsellers/referral",
+    "description": "Referral program for Magento 2",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "require": {
+        "magento/framework": ">=2.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WolfSellers\\Referral\\": "app/code/WolfSellers/Referral/"
+        },
+        "files": [
+            "app/code/WolfSellers/Referral/registration.php"
+        ]
+    },
+    "extra": {
+        "map": [
+            [
+                "*",
+                "app/code/WolfSellers/Referral"
+            ]
+        ]
+    }
+}

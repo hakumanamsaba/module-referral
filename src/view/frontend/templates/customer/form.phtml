@@ -1,0 +1,84 @@
+<?php
+/** @var \WolfSellers\Referral\Block\Customer\ReferralForm $block */
+
+$referral   = $block->getReferral();
+$mode       = $block->getMode();
+$formAction = $block->getFormAction();
+
+$entityId   = $referral ? $referral->getId() : '';
+$firstName  = $referral ? $referral->getFirstName() : '';
+$lastName   = $referral ? $referral->getLastName() : '';
+$email      = $referral ? $referral->getEmail() : '';
+$phone      = $referral ? $referral->getPhone() : '';
+$status     = $referral ? $referral->getStatus() : 'pending';
+?>
+
+<div class="referral-form-wrapper">
+    <h2>
+        <?php if ($mode === 'edit'): ?>
+            <?= __('Edit Referral') ?>
+        <?php else: ?>
+            <?= __('Create Referral') ?>
+        <?php endif; ?>
+    </h2>
+
+    <form action="<?= $formAction ?>" method="post">
+        <!-- Form key for security (CSRF) -->
+        <?= $block->getBlockHtml('formkey') ?>
+
+        <!-- In edit mode, include the entity_id -->
+        <?php if ($entityId): ?>
+            <input type="hidden" name="entity_id" value="<?= $block->escapeHtml($entityId) ?>" />
+        <?php endif; ?>
+
+        <div class="field first_name">
+            <label for="referral-first-name"><?= __('Referral First Name') ?></label>
+            <input type="text"
+                   name="first_name"
+                   id="referral-first-name"
+                   value="<?= $block->escapeHtml($firstName) ?>" />
+        </div>
+
+        <div class="field last_name">
+            <label for="referral-last-name"><?= __('Referral Last Name') ?></label>
+            <input type="text"
+                   name="last_name"
+                   id="referral-last-name"
+                   value="<?= $block->escapeHtml($lastName) ?>" />
+        </div>
+
+        <div class="field email">
+            <label for="referral-email"><?= __('Referral Email') ?></label>
+            <input type="email"
+                   name="email"
+                   id="referral-email"
+                   value="<?= $block->escapeHtml($email) ?>"
+                   required />
+        </div>
+
+        <div class="field phone">
+            <label for="referral-phone"><?= __('Referral Phone') ?></label>
+            <input type="text"
+                   name="phone"
+                   id="referral-phone"
+                   value="<?= $block->escapeHtml($phone) ?>" />
+        </div>
+
+        <!--<div class="field status">
+            <label for="referral-status"><?= __('Referral Status') ?></label>
+            <select name="status" id="referral-status">
+                <option value="pending" <?= $status === 'pending' ? 'selected' : '' ?>><?= __('Pending') ?></option>
+                <option value="registered" <?= $status === 'registered' ? 'selected' : '' ?>><?= __('Registered') ?></option>
+            </select>
+        </div>-->
+
+        <div class="actions">
+            <button type="submit" class="action primary">
+                <?= __('Save') ?>
+            </button>
+            <a href="<?= $block->getUrl('referral/customer_referral/index') ?>" class="action back">
+                <?= __('Back to List') ?>
+            </a>
+        </div>
+    </form>
+</div>

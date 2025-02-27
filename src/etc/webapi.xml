@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!-- Declaración de endpoints de la API REST -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Webapi/etc/webapi.xsd">
+    <route url="/V1/wolfsellers/referral/:id" method="GET">
+        <service class="WolfSellers\Referral\Api\ReferralRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="WolfSellers_Referral::manage"/>
+        </resources>
+    </route>
+    <route url="/V1/wolfsellers/referral" method="POST">
+        <service class="WolfSellers\Referral\Api\ReferralRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="WolfSellers_Referral::manage"/>
+        </resources>
+    </route>
+    <route url="/V1/wolfsellers/referral/:id" method="DELETE">
+        <service class="WolfSellers\Referral\Api\ReferralRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="WolfSellers_Referral::manage"/>
+        </resources>
+    </route>
+    <route url="/V1/wolfsellers/referrals" method="GET">
+        <service class="WolfSellers\Referral\Api\ReferralRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="WolfSellers_Referral::manage"/>
+        </resources>
+    </route>
+    <route url="/V1/wolfsellers/referral/:id" method="PUT">
+        <service class="WolfSellers\Referral\Api\ReferralRepositoryInterface" method="updateById"/>
+        <resources>
+            <resource ref="WolfSellers_Referral::manage"/>
+        </resources>
+    </route>
+</routes>
