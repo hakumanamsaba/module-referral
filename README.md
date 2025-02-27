@@ -26,7 +26,7 @@ The `WolfSellers_Referral` module is a referral program implementation for Magen
 "repositories": [
     {
         "type": "vcs",
-        "url": "https://github.com/hakumanam/module-referral"
+        "url": "https://github.com/hakumanamsaba/module-referral"
     }
 ]
 ```
