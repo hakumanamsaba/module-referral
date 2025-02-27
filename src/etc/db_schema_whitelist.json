@@ -1,0 +1,19 @@
+{
+    "wolfsellers_referral": {
+        "column": {
+            "entity_id": true,
+            "customer_id": true,
+            "first_name": true,
+            "last_name": true,
+            "email": true,
+            "phone": true,
+            "status": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "WOLFSELLERS_REFERRAL_EMAIL": true,
+            "WOLFSELLERS_REFERRAL_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID": true
+        }
+    }
+}
