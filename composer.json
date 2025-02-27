@@ -15,13 +15,5 @@
         "files": [
             "src/registration.php"
         ]
-    },
-    "extra": {
-        "map": [
-            [
-                "*",
-                "src"
-            ]
-        ]
     }
 }
